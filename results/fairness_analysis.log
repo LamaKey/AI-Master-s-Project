@@ -1,0 +1,216 @@
+2025-09-03 15:21:45,165 - INFO - Loading cached dataset...
+2025-09-03 15:21:45,274 - INFO - Dataset loaded from cache. Shape: (48842, 15)
+2025-09-03 15:21:45,317 - INFO - Removed 3122 rows as numeric outliers (z>3.5).
+2025-09-03 15:21:45,660 - INFO - Data cleaned. Shape after cleaning: (44876, 15)
+2025-09-03 15:21:45,770 - INFO - Starting comprehensive hyperparameter tuning for LogisticRegression
+2025-09-03 15:21:45,770 - INFO - Methods: ['bayesian']
+2025-09-03 15:21:45,771 - INFO - Fairness-aware: True
+2025-09-03 15:21:45,771 - INFO - ============================================================
+2025-09-03 15:21:45,771 - INFO - [Tuning] Running Bayesian Optimization...
+2025-09-03 15:33:37,974 - INFO - Bayesian Optimization completed. Best score: 0.7732
+2025-09-03 15:33:37,974 - INFO - SELECTED METHOD: bayesian_optimization
+2025-09-03 15:33:37,974 - INFO - BEST SCORE: 0.7732
+2025-09-03 15:33:37,974 - INFO - BEST PARAMS: {'C': 0.0027613135454116473, 'penalty': 'l1', 'solver': 'saga', 'max_iter': 3412, 'class_weight': None}
+2025-09-03 15:33:38,606 - INFO - Sensitive attribute values: ['Female' 'Male']
+2025-09-03 15:33:38,607 - INFO - Privileged group for sex -> Male
+2025-09-03 15:33:38,607 - INFO - Encoded as binary: 0=Female, 1=Male (privileged=Male)
+2025-09-03 15:33:38,739 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:34:26,777 - INFO - Sensitive attribute values: ['Amer-Indian-Eskimo' 'Asian-Pac-Islander' 'Black' 'Other' 'White']
+2025-09-03 15:34:26,779 - INFO - Privileged group for race -> White
+2025-09-03 15:34:26,780 - INFO - Multi-class detected. Privileged group: White vs others
+2025-09-03 15:34:26,942 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:35:47,573 - INFO - SHAP explainer set up for Baseline (Tuned)
+2025-09-03 15:35:47,574 - INFO - SHAP explainer set up for Preprocessing (Sex)
+2025-09-03 15:35:47,575 - INFO - SHAP explainer set up for Preprocessing (Race)
+2025-09-03 15:35:47,577 - INFO - SHAP explainer set up for Adversarial (Sex)
+2025-09-03 15:35:47,578 - INFO - SHAP explainer set up for Adversarial (Race)
+2025-09-03 15:35:47,579 - INFO - SHAP explainer set up for Fairlearn EG (Sex)
+2025-09-03 15:35:47,581 - INFO - SHAP explainer set up for Fairlearn EG (Race)
+2025-09-03 15:35:47,582 - INFO - SHAP explainer set up for Fairlearn DP (Sex)
+2025-09-03 15:35:47,583 - INFO - SHAP explainer set up for Fairlearn DP (Race)
+2025-09-03 15:35:47,609 - INFO - LIME explainer set up successfully
+2025-09-03 15:35:48,037 - INFO - [CCF] Starting Calibration-Constrained Fairness search for Sex...
+2025-09-03 15:35:57,299 - INFO - [CCF] Sex thresholds: {'Female': 0.3, 'Male': 0.5499999999999999}; metrics: {'accuracy': 0.7907754010695187, 'dp_diff': 0.04985129521444088, 'eo_diff': 0.07061276435539841, 'ece_diff': 0.03508396711526714}
+2025-09-03 15:35:57,299 - INFO - [CCF] Starting Calibration-Constrained Fairness search for Race...
+2025-09-03 15:36:27,951 - INFO - [CCF] Race thresholds: {'Amer-Indian-Eskimo': 0.35, 'Asian-Pac-Islander': 0.5499999999999999, 'Black': 0.44999999999999996, 'Other': 0.35, 'White': 0.5499999999999999}; metrics: {'accuracy': 0.7901069518716578, 'dp_diff': 0.0425531914893617, 'eo_diff': 0.11519198664440734, 'ece_diff': 0.09025675368216854}
+2025-09-03 15:36:27,951 - INFO - [Eval] Models to evaluate:
+2025-09-03 15:36:27,951 - INFO - ['Baseline (Tuned)', 'Preprocessing (Sex)', 'Adversarial (Sex)', 'Fairlearn EG (Sex)', 'Fairlearn DP (Sex)', 'Post-processing EO (Sex)', 'Post-processing Cal (Sex)', 'Preprocessing (Race)', 'Adversarial (Race)', 'Fairlearn EG (Race)', 'Fairlearn DP (Race)', 'Post-processing EO (Race)', 'Post-processing Cal (Race)', 'Fairlearn EG (Both)', 'Post-processing CCF (Sex)', 'Post-processing CCF (Race)']
+2025-09-03 15:36:39,422 - INFO - PermutationExplainer explainer:  98%|#############################################################################################################3 | 197/200 [00:00<?, ?it/s]
+2025-09-03 15:36:39,454 - INFO - PermutationExplainer explainer: 201it [00:10,  2.51s/it]
+2025-09-03 15:36:39,457 - INFO - SHAP analysis completed for Baseline (Tuned)
+2025-09-03 15:36:39,510 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:36:39,659 - INFO - LIME plot saved to: results/plots\lime_Baseline_Tuned_sample_3.png
+2025-09-03 15:36:39,801 - INFO - LIME plot saved to: results/plots\lime_Baseline_Tuned_sample_15.png
+2025-09-03 15:36:39,947 - INFO - LIME plot saved to: results/plots\lime_Baseline_Tuned_sample_42.png
+2025-09-03 15:36:42,997 - INFO - SHAP analysis completed for Preprocessing (Sex)
+2025-09-03 15:36:43,063 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:36:43,212 - INFO - LIME plot saved to: results/plots\lime_Preprocessing_Sex_sample_3.png
+2025-09-03 15:36:43,354 - INFO - LIME plot saved to: results/plots\lime_Preprocessing_Sex_sample_15.png
+2025-09-03 15:36:43,483 - INFO - LIME plot saved to: results/plots\lime_Preprocessing_Sex_sample_42.png
+2025-09-03 15:36:47,554 - INFO - SHAP analysis completed for Adversarial (Sex)
+2025-09-03 15:36:47,671 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:36:47,867 - INFO - LIME plot saved to: results/plots\lime_Adversarial_Sex_sample_3.png
+2025-09-03 15:36:48,058 - INFO - LIME plot saved to: results/plots\lime_Adversarial_Sex_sample_15.png
+2025-09-03 15:36:48,190 - INFO - LIME plot saved to: results/plots\lime_Adversarial_Sex_sample_42.png
+2025-09-03 15:37:03,740 - INFO - PermutationExplainer explainer:  86%|################################################################################################               | 173/200 [00:00<?, ?it/s]
+2025-09-03 15:37:03,926 - INFO - PermutationExplainer explainer:  88%|##########################################################################################6            | 176/200 [00:10<00:01, 16.11it/s]
+2025-09-03 15:37:04,085 - INFO - PermutationExplainer explainer:  89%|###########################################################################################6           | 178/200 [00:10<00:01, 14.17it/s]
+2025-09-03 15:37:04,207 - INFO - PermutationExplainer explainer:  91%|#############################################################################################7         | 182/200 [00:10<00:00, 21.14it/s]
+2025-09-03 15:37:04,354 - INFO - PermutationExplainer explainer:  92%|###############################################################################################2       | 185/200 [00:10<00:00, 20.86it/s]
+2025-09-03 15:37:04,536 - INFO - PermutationExplainer explainer:  94%|################################################################################################8      | 188/200 [00:10<00:00, 19.09it/s]
+2025-09-03 15:37:04,686 - INFO - PermutationExplainer explainer:  95%|#################################################################################################8     | 190/200 [00:10<00:00, 17.22it/s]
+2025-09-03 15:37:04,849 - INFO - PermutationExplainer explainer:  96%|##################################################################################################8    | 192/200 [00:11<00:00, 16.07it/s]
+2025-09-03 15:37:05,030 - INFO - PermutationExplainer explainer:  97%|###################################################################################################9   | 194/200 [00:11<00:00, 13.89it/s]
+2025-09-03 15:37:05,169 - INFO - PermutationExplainer explainer:  98%|####################################################################################################9  | 196/200 [00:11<00:00, 13.98it/s]
+2025-09-03 15:37:05,346 - INFO - PermutationExplainer explainer:  99%|#####################################################################################################9 | 198/200 [00:11<00:00, 13.13it/s]
+2025-09-03 15:37:05,479 - INFO - PermutationExplainer explainer: 100%|#######################################################################################################| 200/200 [00:11<00:00, 13.64it/s]
+2025-09-03 15:37:05,552 - INFO - PermutationExplainer explainer: 201it [00:11,  2.36it/s]
+2025-09-03 15:37:05,552 - INFO - SHAP analysis completed for Fairlearn EG (Sex)
+2025-09-03 15:37:05,727 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:37:05,977 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Sex_sample_3.png
+2025-09-03 15:37:06,209 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Sex_sample_15.png
+2025-09-03 15:37:06,463 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Sex_sample_42.png
+2025-09-03 15:37:25,192 - INFO - PermutationExplainer explainer:  82%|
+2025-09-03 15:37:25,318 - INFO - PermutationExplainer explainer:  84%|
+2025-09-03 15:37:25,541 - INFO - PermutationExplainer explainer:  86%|
+2025-09-03 15:37:25,704 - INFO - PermutationExplainer explainer:  88%|
+2025-09-03 15:37:25,832 - INFO - PermutationExplainer explainer:  90%|
+2025-09-03 15:37:25,986 - INFO - PermutationExplainer explainer:  91%|
+2025-09-03 15:37:26,148 - INFO - PermutationExplainer explainer:  92%|
+2025-09-03 15:37:26,292 - INFO - PermutationExplainer explainer:  94%|
+2025-09-03 15:37:26,442 - INFO - PermutationExplainer explainer:  96%|
+2025-09-03 15:37:26,611 - INFO - PermutationExplainer explainer:  97%|
+2025-09-03 15:37:26,733 - INFO - PermutationExplainer explainer:  98%|
+2025-09-03 15:37:26,849 - INFO - PermutationExplainer explainer:  99%|
+2025-09-03 15:37:26,989 - INFO - PermutationExplainer explainer: 201it [00:11, 19.26it/s]
+2025-09-03 15:37:26,989 - INFO - PermutationExplainer explainer: 201it [00:11,  3.05it/s]
+2025-09-03 15:37:26,993 - INFO - SHAP analysis completed for Fairlearn DP (Sex)
+2025-09-03 15:37:27,097 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:37:27,321 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_DP_Sex_sample_3.png
+2025-09-03 15:37:27,511 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_DP_Sex_sample_15.png
+2025-09-03 15:37:27,666 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_DP_Sex_sample_42.png
+2025-09-03 15:37:36,084 - INFO - SHAP analysis completed for Preprocessing (Race)
+2025-09-03 15:37:36,149 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:37:36,329 - INFO - LIME plot saved to: results/plots\lime_Preprocessing_Race_sample_3.png
+2025-09-03 15:37:36,497 - INFO - LIME plot saved to: results/plots\lime_Preprocessing_Race_sample_15.png
+2025-09-03 15:37:36,657 - INFO - LIME plot saved to: results/plots\lime_Preprocessing_Race_sample_42.png
+2025-09-03 15:37:40,603 - INFO - SHAP analysis completed for Adversarial (Race)
+2025-09-03 15:37:40,705 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:37:40,911 - INFO - LIME plot saved to: results/plots\lime_Adversarial_Race_sample_3.png
+2025-09-03 15:37:41,082 - INFO - LIME plot saved to: results/plots\lime_Adversarial_Race_sample_15.png
+2025-09-03 15:37:41,264 - INFO - LIME plot saved to: results/plots\lime_Adversarial_Race_sample_42.png
+2025-09-03 15:38:01,879 - INFO - PermutationExplainer explainer:  74%|
+2025-09-03 15:38:01,988 - INFO - PermutationExplainer explainer:  75%|
+2025-09-03 15:38:02,160 - INFO - PermutationExplainer explainer:  76%|
+2025-09-03 15:38:02,377 - INFO - PermutationExplainer explainer:  78%|
+2025-09-03 15:38:02,488 - INFO - PermutationExplainer explainer:  79%|
+2025-09-03 15:38:02,635 - INFO - PermutationExplainer explainer:  80%|
+2025-09-03 15:38:02,770 - INFO - PermutationExplainer explainer:  82%|
+2025-09-03 15:38:02,905 - INFO - PermutationExplainer explainer:  82%|
+2025-09-03 15:38:03,023 - INFO - PermutationExplainer explainer:  84%|
+2025-09-03 15:38:03,138 - INFO - PermutationExplainer explainer:  84%|
+2025-09-03 15:38:03,289 - INFO - PermutationExplainer explainer:  86%|
+2025-09-03 15:38:03,435 - INFO - PermutationExplainer explainer:  86%|
+2025-09-03 15:38:03,582 - INFO - PermutationExplainer explainer:  88%|
+2025-09-03 15:38:03,692 - INFO - PermutationExplainer explainer:  88%|
+2025-09-03 15:38:03,801 - INFO - PermutationExplainer explainer:  90%|
+2025-09-03 15:38:03,927 - INFO - PermutationExplainer explainer:  90%|
+2025-09-03 15:38:04,080 - INFO - PermutationExplainer explainer:  92%|
+2025-09-03 15:38:04,367 - INFO - PermutationExplainer explainer:  92%|
+2025-09-03 15:38:04,597 - INFO - PermutationExplainer explainer:  94%|
+2025-09-03 15:38:04,801 - INFO - PermutationExplainer explainer:  94%|
+2025-09-03 15:38:04,964 - INFO - PermutationExplainer explainer:  96%|
+2025-09-03 15:38:05,124 - INFO - PermutationExplainer explainer:  96%|
+2025-09-03 15:38:05,311 - INFO - PermutationExplainer explainer:  98%|
+2025-09-03 15:38:05,461 - INFO - PermutationExplainer explainer:  98%|
+2025-09-03 15:38:05,660 - INFO - PermutationExplainer explainer: 100%|
+2025-09-03 15:38:05,857 - INFO - PermutationExplainer explainer: 201it [00:13, 10.79it/s]
+2025-09-03 15:38:05,857 - INFO - PermutationExplainer explainer: 201it [00:13,  3.86it/s]
+2025-09-03 15:38:05,862 - INFO - SHAP analysis completed for Fairlearn EG (Race)
+2025-09-03 15:38:06,004 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:38:06,178 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Race_sample_3.png
+2025-09-03 15:38:06,314 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Race_sample_15.png
+2025-09-03 15:38:06,466 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Race_sample_42.png
+2025-09-03 15:38:23,472 - INFO - PermutationExplainer explainer:  90%|
+2025-09-03 15:38:23,594 - INFO - PermutationExplainer explainer:  92%|
+2025-09-03 15:38:23,732 - INFO - PermutationExplainer explainer:  93%|
+2025-09-03 15:38:23,911 - INFO - PermutationExplainer explainer:  94%|
+2025-09-03 15:38:24,067 - INFO - PermutationExplainer explainer:  96%|
+2025-09-03 15:38:24,197 - INFO - PermutationExplainer explainer:  97%|
+2025-09-03 15:38:24,299 - INFO - PermutationExplainer explainer:  98%|
+2025-09-03 15:38:24,444 - INFO - PermutationExplainer explainer: 100%|
+2025-09-03 15:38:24,567 - INFO - PermutationExplainer explainer: 201it [00:11, 18.36it/s]
+2025-09-03 15:38:24,567 - INFO - PermutationExplainer explainer: 201it [00:11,  1.89it/s]
+2025-09-03 15:38:24,567 - INFO - SHAP analysis completed for Fairlearn DP (Race)
+2025-09-03 15:38:24,692 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:38:24,864 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_DP_Race_sample_3.png
+2025-09-03 15:38:25,075 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_DP_Race_sample_15.png
+2025-09-03 15:38:25,219 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_DP_Race_sample_42.png
+2025-09-03 15:38:44,382 - INFO - SHAP explainer not found for Fairlearn EG (Both)
+2025-09-03 15:38:44,532 - INFO - LIME analysis completed for 3 samples
+2025-09-03 15:38:44,708 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Both_sample_3.png
+2025-09-03 15:38:44,907 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Both_sample_15.png
+2025-09-03 15:38:45,099 - INFO - LIME plot saved to: results/plots\lime_Fairlearn_EG_Both_sample_42.png
+2025-09-03 15:47:37,301 - INFO - Sensitive attribute values: ['Female' 'Male']
+2025-09-03 15:47:37,301 - INFO - Privileged group for sex -> Male
+2025-09-03 15:47:37,301 - INFO - Encoded as binary: 0=Female, 1=Male (privileged=Male)
+2025-09-03 15:47:37,415 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:37,655 - INFO - Sensitive attribute values: ['Female' 'Male']
+2025-09-03 15:47:37,661 - INFO - Privileged group for sex -> Male
+2025-09-03 15:47:37,661 - INFO - Encoded as binary: 0=Female, 1=Male (privileged=Male)
+2025-09-03 15:47:37,777 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:38,038 - INFO - Sensitive attribute values: ['Female' 'Male']
+2025-09-03 15:47:38,038 - INFO - Privileged group for sex -> Male
+2025-09-03 15:47:38,038 - INFO - Encoded as binary: 0=Female, 1=Male (privileged=Male)
+2025-09-03 15:47:38,145 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:38,403 - INFO - Sensitive attribute values: ['Female' 'Male']
+2025-09-03 15:47:38,403 - INFO - Privileged group for sex -> Male
+2025-09-03 15:47:38,403 - INFO - Encoded as binary: 0=Female, 1=Male (privileged=Male)
+2025-09-03 15:47:38,535 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:38,759 - INFO - Sensitive attribute values: ['Female' 'Male']
+2025-09-03 15:47:38,759 - INFO - Privileged group for sex -> Male
+2025-09-03 15:47:38,759 - INFO - Encoded as binary: 0=Female, 1=Male (privileged=Male)
+2025-09-03 15:47:38,863 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:39,111 - INFO - Sensitive attribute values: ['Amer-Indian-Eskimo' 'Asian-Pac-Islander' 'Black' 'Other' 'White']
+2025-09-03 15:47:39,114 - INFO - Privileged group for race -> White
+2025-09-03 15:47:39,115 - INFO - Multi-class detected. Privileged group: White vs others
+2025-09-03 15:47:39,226 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:39,467 - INFO - Sensitive attribute values: ['Amer-Indian-Eskimo' 'Asian-Pac-Islander' 'Black' 'Other' 'White']
+2025-09-03 15:47:39,469 - INFO - Privileged group for race -> White
+2025-09-03 15:47:39,469 - INFO - Multi-class detected. Privileged group: White vs others
+2025-09-03 15:47:39,586 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:39,854 - INFO - Sensitive attribute values: ['Amer-Indian-Eskimo' 'Asian-Pac-Islander' 'Black' 'Other' 'White']
+2025-09-03 15:47:39,857 - INFO - Privileged group for race -> White
+2025-09-03 15:47:39,857 - INFO - Multi-class detected. Privileged group: White vs others
+2025-09-03 15:47:39,954 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:40,201 - INFO - Sensitive attribute values: ['Amer-Indian-Eskimo' 'Asian-Pac-Islander' 'Black' 'Other' 'White']
+2025-09-03 15:47:40,202 - INFO - Privileged group for race -> White
+2025-09-03 15:47:40,202 - INFO - Multi-class detected. Privileged group: White vs others
+2025-09-03 15:47:40,352 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:40,595 - INFO - Sensitive attribute values: ['Amer-Indian-Eskimo' 'Asian-Pac-Islander' 'Black' 'Other' 'White']
+2025-09-03 15:47:40,601 - INFO - Privileged group for race -> White
+2025-09-03 15:47:40,601 - INFO - Multi-class detected. Privileged group: White vs others
+2025-09-03 15:47:40,714 - INFO - [Preprocess-Train] Using original feature matrix with reweighting (no AIF360 feature transform).
+2025-09-03 15:47:40,943 - INFO - Creating fairness comparison plot...
+2025-09-03 15:47:44,321 - INFO - Fairness comparison plot saved to: results/plots/fairness_comparison.png
+2025-09-03 15:47:44,321 - INFO - Creating performance vs fairness plot(s)...
+2025-09-03 15:47:44,992 - INFO - Performance vs fairness plot saved to: results/plots/performance_vs_fairness_sex.png
+2025-09-03 15:47:45,602 - INFO - Performance vs fairness plot saved to: results/plots/performance_vs_fairness_race.png
+2025-09-03 15:47:46,099 - INFO - Performance vs fairness plot saved to: results/plots/performance_vs_fairness_sexxrace.png
+2025-09-03 15:47:46,099 - INFO - Creating interpretability plots...
+2025-09-03 15:47:46,500 - INFO - SHAP plot saved to: results/plots/shap_summary_Baseline_Tuned.png
+2025-09-03 15:47:46,900 - INFO - SHAP plot saved to: results/plots/shap_summary_Preprocessing_Sex.png
+2025-09-03 15:47:47,259 - INFO - SHAP plot saved to: results/plots/shap_summary_Adversarial_Sex.png
+2025-09-03 15:47:47,642 - INFO - SHAP plot saved to: results/plots/shap_summary_Fairlearn_EG_Sex.png
+2025-09-03 15:47:48,025 - INFO - SHAP plot saved to: results/plots/shap_summary_Fairlearn_DP_Sex.png
+2025-09-03 15:47:48,406 - INFO - SHAP plot saved to: results/plots/shap_summary_Preprocessing_Race.png
+2025-09-03 15:47:48,803 - INFO - SHAP plot saved to: results/plots/shap_summary_Adversarial_Race.png
+2025-09-03 15:47:49,203 - INFO - SHAP plot saved to: results/plots/shap_summary_Fairlearn_EG_Race.png
+2025-09-03 15:47:49,604 - INFO - SHAP plot saved to: results/plots/shap_summary_Fairlearn_DP_Race.png
+2025-09-03 15:47:49,604 - INFO - All visualizations completed.
+2025-09-03 15:48:01,127 - INFO - Executive summary saved to: results/reports/executive_summary.json
+2025-09-03 15:48:01,165 - INFO - Results saved to:
+2025-09-03 15:48:01,165 - INFO -   - results/reports/comprehensive_results.csv
+2025-09-03 15:48:01,165 - INFO -   - results/reports/cross_validation_results.csv
+2025-09-03 15:48:01,165 - INFO -   - results/reports/detailed_analysis_report.json
+2025-09-03 15:48:01,165 - INFO -   - results/plots/ (visualizations)

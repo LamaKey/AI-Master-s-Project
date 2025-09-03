@@ -1,0 +1,951 @@
+{
+  "analysis_timestamp": "2025-09-03T15:48:01.162787",
+  "model_results": [
+    {
+      "model_name": "Baseline (Tuned)",
+      "performance": {
+        "accuracy": 0.7935606060606061,
+        "precision": 0.6157894736842106,
+        "recall": 0.17682619647355163,
+        "f1": 0.27475538160469665,
+        "auc": 0.8309342670515204
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.09597575349385419,
+          "eo_diff": 0.20683559222156747,
+          "cal_diff": 0.08817692708602787
+        },
+        "race": {
+          "dp_diff": 0.05901722391084094,
+          "eo_diff": 0.18308291597106288,
+          "cal_diff": 0.12887561990609384
+        },
+        "intersectional": {
+          "max_disparity": 0.3010122949230113,
+          "positive_rate_disparity": 0.11299435028248588,
+          "accuracy_disparity": 0.3010122949230113,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Preprocessing (Sex)",
+      "performance": {
+        "accuracy": 0.8240864527629234,
+        "precision": 0.6559139784946236,
+        "recall": 0.4302267002518892,
+        "f1": 0.5196227563127472,
+        "auc": 0.8581045727378165
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.04604633996281923,
+          "eo_diff": 0.24813600798795266,
+          "cal_diff": 0.08099406733544212
+        },
+        "race": {
+          "dp_diff": 0.1757852077001013,
+          "eo_diff": 0.23867595818815335,
+          "cal_diff": 0.33805630561129396
+        },
+        "intersectional": {
+          "max_disparity": 0.5256410256410257,
+          "positive_rate_disparity": 0.22917308680020543,
+          "accuracy_disparity": 0.20711321413334371,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Adversarial (Sex)",
+      "performance": {
+        "accuracy": 0.8329991087344029,
+        "precision": 0.6675862068965517,
+        "recall": 0.48765743073047857,
+        "f1": 0.5636098981077147,
+        "auc": 0.8761395273592134
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.14163277704849483,
+          "eo_diff": 0.07405821910466263,
+          "cal_diff": 0.04711916445443768
+        },
+        "race": {
+          "dp_diff": 0.171655843584464,
+          "eo_diff": 0.26422764227642276,
+          "cal_diff": 0.293925323417861
+        },
+        "intersectional": {
+          "max_disparity": 0.3586956521739131,
+          "positive_rate_disparity": 0.2808439669549703,
+          "accuracy_disparity": 0.19609820424310598,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Fairlearn EG (Sex)",
+      "performance": {
+        "accuracy": 0.821969696969697,
+        "precision": 0.6582174979558463,
+        "recall": 0.40554156171284633,
+        "f1": 0.5018703241895262,
+        "auc": 0.4962733301938765
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.06658469325642662,
+          "eo_diff": 0.11048909840895699,
+          "cal_diff": 0.1032701579547664
+        },
+        "race": {
+          "dp_diff": 0.18059777102330293,
+          "eo_diff": 0.3693379790940767,
+          "cal_diff": 0.17539046293523491
+        },
+        "intersectional": {
+          "max_disparity": 0.4487179487179488,
+          "positive_rate_disparity": 0.22917308680020543,
+          "accuracy_disparity": 0.20253655509444213,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Fairlearn DP (Sex)",
+      "performance": {
+        "accuracy": 0.8170677361853832,
+        "precision": 0.6500437445319335,
+        "recall": 0.3743073047858942,
+        "f1": 0.4750639386189258,
+        "auc": 0.5028080363850319
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.009818790454573761,
+          "eo_diff": 0.3338530413147384,
+          "cal_diff": 0.0014288375951820864
+        },
+        "race": {
+          "dp_diff": 0.12487335359675784,
+          "eo_diff": 0.17235772357723578,
+          "cal_diff": 0.028458163003652337
+        },
+        "intersectional": {
+          "max_disparity": 0.6089743589743589,
+          "positive_rate_disparity": 0.1795582948125321,
+          "accuracy_disparity": 0.2138359901226906,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Post-processing EO (Sex)",
+      "performance": {
+        "accuracy": 0.7864304812834224,
+        "precision": 0.5395348837209303,
+        "recall": 0.23375314861460958,
+        "f1": 0.32618629173989455,
+        "auc": 0.5138801705106998
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.0323364367946031,
+          "eo_diff": 0.023065622340077252,
+          "cal_diff": 0.34574802904092305
+        },
+        "race": {
+          "dp_diff": 0.05749746707193516,
+          "eo_diff": 0.15238095238095237,
+          "cal_diff": 0.3092020516898534
+        },
+        "intersectional": {
+          "max_disparity": 0.3076923076923077,
+          "positive_rate_disparity": 0.08793014894709811,
+          "accuracy_disparity": 0.27355234068960177,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Post-processing Cal (Sex)",
+      "performance": {
+        "accuracy": 0.796457219251337,
+        "precision": 0.6151603498542274,
+        "recall": 0.21259445843828714,
+        "f1": 0.3159865219019094,
+        "auc": 0.8305583609296876
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.11550766122242802,
+          "eo_diff": 0.2486741308190925,
+          "cal_diff": 0.12340240108708786
+        },
+        "race": {
+          "dp_diff": 0.0732016210739615,
+          "eo_diff": 0.21981079577072898,
+          "cal_diff": 0.1494732759728572
+        },
+        "intersectional": {
+          "max_disparity": 0.3010122949230113,
+          "positive_rate_disparity": 0.13559322033898305,
+          "accuracy_disparity": 0.3010122949230113,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Preprocessing (Race)",
+      "performance": {
+        "accuracy": 0.8259803921568627,
+        "precision": 0.6666666666666666,
+        "recall": 0.42619647355163726,
+        "f1": 0.5199754148740012,
+        "auc": 0.8668694943156495
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.14002001359114558,
+          "eo_diff": 0.07613108099260135,
+          "cal_diff": 0.03449353044468802
+        },
+        "race": {
+          "dp_diff": 0.20301418439716312,
+          "eo_diff": 0.3609756097560976,
+          "cal_diff": 0.23069917656146754
+        },
+        "intersectional": {
+          "max_disparity": 0.39855072463768115,
+          "positive_rate_disparity": 0.3002236615857994,
+          "accuracy_disparity": 0.22649290876417283,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Adversarial (Race)",
+      "performance": {
+        "accuracy": 0.8337789661319073,
+        "precision": 0.6724982505248426,
+        "recall": 0.4841309823677582,
+        "f1": 0.5629759812536614,
+        "auc": 0.8778491381686494
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.1540216545747755,
+          "eo_diff": 0.08094949961659369,
+          "cal_diff": 0.03372387757544035
+        },
+        "race": {
+          "dp_diff": 0.15729546134487796,
+          "eo_diff": 0.3142857142857143,
+          "cal_diff": 0.28726947420995225
+        },
+        "intersectional": {
+          "max_disparity": 0.2695445319267218,
+          "positive_rate_disparity": 0.2695445319267218,
+          "accuracy_disparity": 0.21197429831025616,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Fairlearn EG (Race)",
+      "performance": {
+        "accuracy": 0.794229055258467,
+        "precision": 0.5688622754491018,
+        "recall": 0.2871536523929471,
+        "f1": 0.381653833277536,
+        "auc": 0.5000474161273203
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.03385189887109884,
+          "eo_diff": 0.18804630720879983,
+          "cal_diff": 0.1263375573817741
+        },
+        "race": {
+          "dp_diff": 0.10749113475177305,
+          "eo_diff": 0.183739837398374,
+          "cal_diff": 0.23797815738561146
+        },
+        "intersectional": {
+          "max_disparity": 0.5833333333333334,
+          "positive_rate_disparity": 0.1739085772984078,
+          "accuracy_disparity": 0.26911789421970556,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Fairlearn DP (Race)",
+      "performance": {
+        "accuracy": 0.7884358288770054,
+        "precision": 0.5895833333333333,
+        "recall": 0.14256926952141058,
+        "f1": 0.22961460446247464,
+        "auc": 0.4960288633064389
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.0012906986588432229,
+          "eo_diff": 0.10535544752177045,
+          "cal_diff": 0.10804022895231524
+        },
+        "race": {
+          "dp_diff": 0.028251654259718782,
+          "eo_diff": 0.16666666666666666,
+          "cal_diff": 0.22518733667048396
+        },
+        "intersectional": {
+          "max_disparity": 0.27140622373915635,
+          "positive_rate_disparity": 0.0185567957374489,
+          "accuracy_disparity": 0.27140622373915635,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Post-processing EO (Race)",
+      "performance": {
+        "accuracy": 0.794674688057041,
+        "precision": 0.5894206549118388,
+        "recall": 0.23576826196473552,
+        "f1": 0.33681180280676504,
+        "auc": 0.5741441226881486
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.12871603260078607,
+          "eo_diff": 0.27171929221502,
+          "cal_diff": 0.04429131638896361
+        },
+        "race": {
+          "dp_diff": 0.03873140460128006,
+          "eo_diff": 0.11498257839721251,
+          "cal_diff": 0.20425341756818297
+        },
+        "intersectional": {
+          "max_disparity": 0.3333333333333333,
+          "positive_rate_disparity": 0.14363143631436315,
+          "accuracy_disparity": 0.2770559412532806,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Post-processing Cal (Race)",
+      "performance": {
+        "accuracy": 0.7970142602495544,
+        "precision": 0.6232980332829047,
+        "recall": 0.2075566750629723,
+        "f1": 0.31141345427059713,
+        "auc": 0.8317640132491324
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.11129819834989055,
+          "eo_diff": 0.24278137890394813,
+          "cal_diff": 0.10106116677140992
+        },
+        "race": {
+          "dp_diff": 0.09574468085106383,
+          "eo_diff": 0.21981079577072898,
+          "cal_diff": 0.18371940186584287
+        },
+        "intersectional": {
+          "max_disparity": 0.29536257740888694,
+          "positive_rate_disparity": 0.15254237288135594,
+          "accuracy_disparity": 0.29536257740888694,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Fairlearn EG (Both)",
+      "performance": {
+        "accuracy": 0.794229055258467,
+        "precision": 0.5813679245283019,
+        "recall": 0.24836272040302268,
+        "f1": 0.3480409459936463,
+        "auc": 0.49609847421676023
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.04026891107779271,
+          "eo_diff": 0.06283760557847179,
+          "cal_diff": 0.12734578990693157
+        },
+        "race": {
+          "dp_diff": 0.05853263643243052,
+          "eo_diff": 0.20238095238095236,
+          "cal_diff": 0.19265484059269317
+        },
+        "intersectional": {
+          "max_disparity": 0.22728154210138463,
+          "positive_rate_disparity": 0.10487930148947099,
+          "accuracy_disparity": 0.22728154210138463,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Post-processing CCF (Sex)",
+      "performance": {
+        "accuracy": 0.7907754010695187,
+        "precision": 0.6457765667574932,
+        "recall": 0.11939546599496222,
+        "f1": 0.20153061224489796,
+        "auc": 0.8305583609296876
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.04985129521444088,
+          "eo_diff": 0.07061276435539841,
+          "cal_diff": 0.12340240108708786
+        },
+        "race": {
+          "dp_diff": 0.04609929078014184,
+          "eo_diff": 0.1229827490261547,
+          "cal_diff": 0.1494732759728572
+        },
+        "intersectional": {
+          "max_disparity": 0.3338375415325344,
+          "positive_rate_disparity": 0.057570233616465634,
+          "accuracy_disparity": 0.3338375415325344,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    },
+    {
+      "model_name": "Post-processing CCF (Race)",
+      "performance": {
+        "accuracy": 0.7901069518716578,
+        "precision": 0.654434250764526,
+        "recall": 0.10780856423173804,
+        "f1": 0.185121107266436,
+        "auc": 0.8317640132491324
+      },
+      "fairness": {
+        "sex": {
+          "dp_diff": 0.055059774372790034,
+          "eo_diff": 0.12610489098408956,
+          "cal_diff": 0.10106116677140992
+        },
+        "race": {
+          "dp_diff": 0.0425531914893617,
+          "eo_diff": 0.11519198664440734,
+          "cal_diff": 0.18371940186584287
+        },
+        "intersectional": {
+          "max_disparity": 0.32361116497950837,
+          "positive_rate_disparity": 0.06779661016949153,
+          "accuracy_disparity": 0.32361116497950837,
+          "num_groups": 7,
+          "attributes": [
+            "sex",
+            "race",
+            "sex\u00d7race"
+          ]
+        }
+      }
+    }
+  ],
+  "cross_validation_results": {
+    "Baseline (Tuned)": {
+      "accuracy": [
+        0.7848189415041783,
+        0.7866295264623956,
+        0.7899721448467967,
+        0.7860724233983287,
+        0.7837047353760446
+      ],
+      "f1": [
+        0.17862838915470494,
+        0.17634408602150536,
+        0.2063157894736842,
+        0.19072708113804004,
+        0.2007205352547607
+      ],
+      "fairness_metrics": {
+        "sex": [
+          {
+            "demographic_parity_diff": 0.06057473640686376,
+            "equalized_odds_diff": 0.1240768094534712,
+            "equal_opportunity_diff": 0.1240768094534712
+          },
+          {
+            "demographic_parity_diff": 0.057810839532412325,
+            "equalized_odds_diff": 0.1208548268238762,
+            "equal_opportunity_diff": 0.1208548268238762
+          },
+          {
+            "demographic_parity_diff": 0.06597589342355678,
+            "equalized_odds_diff": 0.14626865671641792,
+            "equal_opportunity_diff": 0.14626865671641792
+          },
+          {
+            "demographic_parity_diff": 0.0661968823403801,
+            "equalized_odds_diff": 0.13753799392097266,
+            "equal_opportunity_diff": 0.13753799392097266
+          },
+          {
+            "demographic_parity_diff": 0.07461118116855822,
+            "equalized_odds_diff": 0.14573991031390135,
+            "equal_opportunity_diff": 0.14573991031390135
+          }
+        ],
+        "race": [
+          {
+            "demographic_parity_diff": 0.04426070038910506,
+            "equalized_odds_diff": 0.125,
+            "equal_opportunity_diff": 0.125
+          },
+          {
+            "demographic_parity_diff": 0.0481283422459893,
+            "equalized_odds_diff": 0.10869565217391304,
+            "equal_opportunity_diff": 0.10869565217391304
+          },
+          {
+            "demographic_parity_diff": 0.05572680077871511,
+            "equalized_odds_diff": 0.15893108298171588,
+            "equal_opportunity_diff": 0.15893108298171588
+          },
+          {
+            "demographic_parity_diff": 0.05603448275862069,
+            "equalized_odds_diff": 0.16363636363636364,
+            "equal_opportunity_diff": 0.16363636363636364
+          },
+          {
+            "demographic_parity_diff": 0.07142857142857142,
+            "equalized_odds_diff": 0.12681912681912683,
+            "equal_opportunity_diff": 0.12681912681912683
+          }
+        ]
+      }
+    },
+    "Fairlearn DP (Sex)": {
+      "accuracy": [
+        0.8144846796657381,
+        0.8196378830083565,
+        0.8214484679665738,
+        0.8186629526462396,
+        0.8157381615598885
+      ],
+      "f1": [
+        0.4572127139364303,
+        0.4788732394366197,
+        0.4932806324110672,
+        0.4837430610626487,
+        0.475208250694169
+      ],
+      "fairness_metrics": {
+        "sex": [
+          {
+            "demographic_parity_diff": 0.0067129082436556825,
+            "equalized_odds_diff": 0.2422515118231514,
+            "equal_opportunity_diff": 0.2422515118231514
+          },
+          {
+            "demographic_parity_diff": 0.017389194817462636,
+            "equalized_odds_diff": 0.2353006855586075,
+            "equal_opportunity_diff": 0.2353006855586075
+          },
+          {
+            "demographic_parity_diff": 0.015836899314532693,
+            "equalized_odds_diff": 0.2606644198363024,
+            "equal_opportunity_diff": 0.2606644198363024
+          },
+          {
+            "demographic_parity_diff": 0.013397071574507827,
+            "equalized_odds_diff": 0.23298095834078308,
+            "equal_opportunity_diff": 0.23298095834078308
+          },
+          {
+            "demographic_parity_diff": 0.021012548208606194,
+            "equalized_odds_diff": 0.24068759342301937,
+            "equal_opportunity_diff": 0.24068759342301937
+          }
+        ],
+        "race": [
+          {
+            "demographic_parity_diff": 0.13471502590673576,
+            "equalized_odds_diff": 0.391304347826087,
+            "equal_opportunity_diff": 0.391304347826087
+          },
+          {
+            "demographic_parity_diff": 0.1049113425274416,
+            "equalized_odds_diff": 0.21537926235212249,
+            "equal_opportunity_diff": 0.21537926235212249
+          },
+          {
+            "demographic_parity_diff": 0.16106719367588934,
+            "equalized_odds_diff": 0.2772727272727273,
+            "equal_opportunity_diff": 0.2772727272727273
+          },
+          {
+            "demographic_parity_diff": 0.11039629439011839,
+            "equalized_odds_diff": 0.08850889192886457,
+            "equal_opportunity_diff": 0.08850889192886457
+          },
+          {
+            "demographic_parity_diff": 0.1179176755447942,
+            "equalized_odds_diff": 0.5,
+            "equal_opportunity_diff": 0.5
+          }
+        ]
+      }
+    },
+    "Fairlearn EG (Sex)": {
+      "accuracy": [
+        0.8165738161559889,
+        0.8208913649025069,
+        0.8211699164345404,
+        0.8214484679665738,
+        0.8178272980501393
+      ],
+      "f1": [
+        0.463980463980464,
+        0.4884645982498011,
+        0.4980453479280688,
+        0.4996096799375488,
+        0.5030395136778115
+      ],
+      "fairness_metrics": {
+        "sex": [
+          {
+            "demographic_parity_diff": 0.06625262251931094,
+            "equalized_odds_diff": 0.015047687426308395,
+            "equal_opportunity_diff": 0.010061987905414793
+          },
+          {
+            "demographic_parity_diff": 0.0722626906686418,
+            "equalized_odds_diff": 0.026931064513967984,
+            "equal_opportunity_diff": 0.026931064513967984
+          },
+          {
+            "demographic_parity_diff": 0.07874794265337991,
+            "equalized_odds_diff": 0.021112201540671158,
+            "equal_opportunity_diff": 0.007258064516129037
+          },
+          {
+            "demographic_parity_diff": 0.07106011732550126,
+            "equalized_odds_diff": 0.016343425781628028,
+            "equal_opportunity_diff": 0.010548900411228301
+          },
+          {
+            "demographic_parity_diff": 0.08857853034864312,
+            "equalized_odds_diff": 0.034910019062388935,
+            "equal_opportunity_diff": 0.017949177877429
+          }
+        ],
+        "race": [
+          {
+            "demographic_parity_diff": 0.15025906735751296,
+            "equalized_odds_diff": 0.391304347826087,
+            "equal_opportunity_diff": 0.391304347826087
+          },
+          {
+            "demographic_parity_diff": 0.13182439995025497,
+            "equalized_odds_diff": 0.30978260869565216,
+            "equal_opportunity_diff": 0.30978260869565216
+          },
+          {
+            "demographic_parity_diff": 0.14936281859070466,
+            "equalized_odds_diff": 0.2318181818181818,
+            "equal_opportunity_diff": 0.2318181818181818
+          },
+          {
+            "demographic_parity_diff": 0.12963201235203295,
+            "equalized_odds_diff": 0.41818181818181815,
+            "equal_opportunity_diff": 0.41818181818181815
+          },
+          {
+            "demographic_parity_diff": 0.14915254237288136,
+            "equalized_odds_diff": 0.375,
+            "equal_opportunity_diff": 0.375
+          }
+        ]
+      }
+    },
+    "Preprocessing (Sex)": {
+      "accuracy": [
+        0.8204735376044568,
+        0.8245125348189415,
+        0.824791086350975,
+        0.8260445682451254,
+        0.8204735376044568
+      ],
+      "f1": [
+        0.5025086839058278,
+        0.5135135135135135,
+        0.526711813393529,
+        0.5288570350811015,
+        0.5220615498702261
+      ],
+      "fairness_metrics": {
+        "sex": [
+          {
+            "demographic_parity_diff": 0.04390585057509906,
+            "equalized_odds_diff": 0.17076973576235027,
+            "equal_opportunity_diff": 0.17076973576235027
+          },
+          {
+            "demographic_parity_diff": 0.04772142251419614,
+            "equalized_odds_diff": 0.1735844602462141,
+            "equal_opportunity_diff": 0.1735844602462141
+          },
+          {
+            "demographic_parity_diff": 0.05529309117187034,
+            "equalized_odds_diff": 0.18005536831969188,
+            "equal_opportunity_diff": 0.18005536831969188
+          },
+          {
+            "demographic_parity_diff": 0.05076781867046777,
+            "equalized_odds_diff": 0.1593956731628821,
+            "equal_opportunity_diff": 0.1593956731628821
+          },
+          {
+            "demographic_parity_diff": 0.06485647710891716,
+            "equalized_odds_diff": 0.13372795216741412,
+            "equal_opportunity_diff": 0.13372795216741412
+          }
+        ],
+        "race": [
+          {
+            "demographic_parity_diff": 0.16062176165803108,
+            "equalized_odds_diff": 0.5,
+            "equal_opportunity_diff": 0.5
+          },
+          {
+            "demographic_parity_diff": 0.14600174107698047,
+            "equalized_odds_diff": 0.35507246376811596,
+            "equal_opportunity_diff": 0.35507246376811596
+          },
+          {
+            "demographic_parity_diff": 0.2037106446776612,
+            "equalized_odds_diff": 0.3681818181818182,
+            "equal_opportunity_diff": 0.3681818181818182
+          },
+          {
+            "demographic_parity_diff": 0.13625836335563563,
+            "equalized_odds_diff": 0.12121212121212122,
+            "equal_opportunity_diff": 0.12121212121212122
+          },
+          {
+            "demographic_parity_diff": 0.17029862792574657,
+            "equalized_odds_diff": 0.375,
+            "equal_opportunity_diff": 0.375
+          }
+        ]
+      }
+    },
+    "Preprocessing (Race)": {
+      "accuracy": [
+        0.8263231197771588,
+        0.8316155988857938,
+        0.8270194986072423,
+        0.8266016713091922,
+        0.8238161559888579
+      ],
+      "f1": [
+        0.5104043973301924,
+        0.5308498253783469,
+        0.5252293577981652,
+        0.523171198774416,
+        0.5344129554655871
+      ],
+      "fairness_metrics": {
+        "sex": [
+          {
+            "demographic_parity_diff": 0.13427554759773833,
+            "equalized_odds_diff": 0.11919100102261104,
+            "equal_opportunity_diff": 0.11919100102261104
+          },
+          {
+            "demographic_parity_diff": 0.13004647967453492,
+            "equalized_odds_diff": 0.06331766980256293,
+            "equal_opportunity_diff": 0.06331766980256293
+          },
+          {
+            "demographic_parity_diff": 0.14242770050226997,
+            "equalized_odds_diff": 0.12562590274434282,
+            "equal_opportunity_diff": 0.12562590274434282
+          },
+          {
+            "demographic_parity_diff": 0.14046931055682366,
+            "equalized_odds_diff": 0.1507799928482031,
+            "equal_opportunity_diff": 0.1507799928482031
+          },
+          {
+            "demographic_parity_diff": 0.16189500824201858,
+            "equalized_odds_diff": 0.17230493273542602,
+            "equal_opportunity_diff": 0.17230493273542602
+          }
+        ],
+        "race": [
+          {
+            "demographic_parity_diff": 0.20725388601036268,
+            "equalized_odds_diff": 0.5652173913043478,
+            "equal_opportunity_diff": 0.5652173913043478
+          },
+          {
+            "demographic_parity_diff": 0.21390374331550802,
+            "equalized_odds_diff": 0.6304347826086957,
+            "equal_opportunity_diff": 0.6304347826086957
+          },
+          {
+            "demographic_parity_diff": 0.27587605451005837,
+            "equalized_odds_diff": 0.4413118527042577,
+            "equal_opportunity_diff": 0.4413118527042577
+          },
+          {
+            "demographic_parity_diff": 0.19859752959341226,
+            "equalized_odds_diff": 0.6363636363636364,
+            "equal_opportunity_diff": 0.6363636363636364
+          },
+          {
+            "demographic_parity_diff": 0.2523809523809524,
+            "equalized_odds_diff": 0.48469387755102045,
+            "equal_opportunity_diff": 0.48469387755102045
+          }
+        ]
+      }
+    }
+  },
+  "best_balanced_model": [
+    "Adversarial (Race)",
+    0.7924495669084557
+  ],
+  "method_metadata": {
+    "seed": 42,
+    "reweighting": {
+      "sex": {
+        "mean": 1.0,
+        "std": 0.25839371676104206,
+        "min": 0.7810796713434465,
+        "max": 2.1928379735022547,
+        "original_size": 28720,
+        "cleaned_size": 28720,
+        "dropped_rows": 0,
+        "used": "aif360_reweighing"
+      },
+      "race": {
+        "mean": 1.0,
+        "std": 0.10083768236488494,
+        "min": 0.8998198164113672,
+        "max": 1.6448757173082484,
+        "original_size": 28720,
+        "cleaned_size": 28720,
+        "dropped_rows": 0,
+        "used": "aif360_reweighing"
+      }
+    },
+    "shap_stability": {
+      "Baseline (Tuned)": {
+        "top_k": 10,
+        "mean_jaccard": 1.0
+      }
+    },
+    "ccf": {
+      "sex_thresholds": {
+        "Female": 0.3,
+        "Male": 0.5499999999999999
+      },
+      "race_thresholds": {
+        "Amer-Indian-Eskimo": 0.35,
+        "Asian-Pac-Islander": 0.5499999999999999,
+        "Black": 0.44999999999999996,
+        "Other": 0.35,
+        "White": 0.5499999999999999
+      },
+      "constraints": {
+        "dp_max": 0.12,
+        "eo_max": 0.12,
+        "ece_max": 0.07
+      }
+    }
+  },
+  "summary": {
+    "total_models_evaluated": 16,
+    "best_accuracy_model": "Adversarial (Race)",
+    "best_fairness_model": "Fairlearn EG (Both)"
+  }
+}

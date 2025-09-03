@@ -1,0 +1,16 @@
+BASELINE_NAME = "Baseline (Tuned)"
+PREPROC_NAME = "Preprocessing (Sex)"
+PREPROC_RACE_NAME = "Preprocessing (Race)"
+ADVERSARIAL_NAME = "Adversarial (Sex)"
+ADVERSARIAL_RACE_NAME = "Adversarial (Race)"
+FAIRLEARN_EG_NAME = "Fairlearn EG (Sex)"
+FAIRLEARN_EG_RACE_NAME = "Fairlearn EG (Race)"
+FAIRLEARN_DP_NAME = "Fairlearn DP (Sex)"
+FAIRLEARN_DP_RACE_NAME = "Fairlearn DP (Race)"
+POST_PROCESSING_EO_SEX_NAME = "Post-processing EO (Sex)"
+POST_PROCESSING_EO_RACE_NAME = "Post-processing EO (Race)"
+POST_PROCESSING_CAL_SEX_NAME = "Post-processing Cal (Sex)"
+POST_PROCESSING_CAL_RACE_NAME = "Post-processing Cal (Race)"
+FAIRLEARN_EG_BOTH_NAME = "Fairlearn EG (Both)"
+
+

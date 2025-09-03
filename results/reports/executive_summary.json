@@ -1,0 +1,248 @@
+{
+  "executive_summary": {
+    "project_overview": "AI Fairness Analysis for Hiring Systems",
+    "analysis_date": "2025-09-03T15:48:01.127248",
+    "dataset": {
+      "name": "UCI Adult",
+      "post_clean_samples": 44876,
+      "features_used": [
+        "age",
+        "education_10th",
+        "education_11th",
+        "education_12th",
+        "education_1st_4th",
+        "education_5th_6th",
+        "education_7th_8th",
+        "education_9th",
+        "education_Assoc_acdm",
+        "education_Assoc_voc",
+        "education_Bachelors",
+        "education_Doctorate",
+        "education_HS_grad",
+        "education_Masters",
+        "education_Prof_school",
+        "education_Some_college",
+        "relationship_Husband",
+        "relationship_Not_in_family",
+        "relationship_Other_relative",
+        "relationship_Own_child",
+        "relationship_Unmarried",
+        "relationship_Wife",
+        "native_country_Cambodia",
+        "native_country_Canada",
+        "native_country_China",
+        "native_country_Columbia",
+        "native_country_Cuba",
+        "native_country_Dominican_Republic",
+        "native_country_Ecuador",
+        "native_country_El_Salvador",
+        "native_country_England",
+        "native_country_France",
+        "native_country_Germany",
+        "native_country_Greece",
+        "native_country_Guatemala",
+        "native_country_Haiti",
+        "native_country_Honduras",
+        "native_country_Hong",
+        "native_country_Hungary",
+        "native_country_India",
+        "native_country_Iran",
+        "native_country_Ireland",
+        "native_country_Italy",
+        "native_country_Jamaica",
+        "native_country_Japan",
+        "native_country_Laos",
+        "native_country_Mexico",
+        "native_country_Nicaragua",
+        "native_country_Outlying_US(Guam_USVI_etc)",
+        "native_country_Peru",
+        "native_country_Philippines",
+        "native_country_Poland",
+        "native_country_Portugal",
+        "native_country_Puerto_Rico",
+        "native_country_Scotland",
+        "native_country_South",
+        "native_country_Taiwan",
+        "native_country_Thailand",
+        "native_country_Trinadad&Tobago",
+        "native_country_United_States",
+        "native_country_Vietnam",
+        "native_country_Yugoslavia"
+      ],
+      "sensitive_attributes": [
+        "sex",
+        "race"
+      ]
+    },
+    "methods": [
+      "Baseline (Tuned)",
+      "Preprocessing (Sex)",
+      "Adversarial (Sex)",
+      "Fairlearn EG (Sex)",
+      "Fairlearn DP (Sex)",
+      "Post-processing EO (Sex)",
+      "Post-processing Cal (Sex)",
+      "Preprocessing (Race)",
+      "Adversarial (Race)",
+      "Fairlearn EG (Race)",
+      "Fairlearn DP (Race)",
+      "Post-processing EO (Race)",
+      "Post-processing Cal (Race)",
+      "Fairlearn EG (Both)",
+      "Post-processing CCF (Sex)",
+      "Post-processing CCF (Race)"
+    ],
+    "metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1",
+      "AUC",
+      "Demographic Parity Diff (by sex/race/native-country)",
+      "Equalized Odds Diff (by sex/race/native-country)",
+      "Equal Opportunity Diff (by sex/race/native-country)",
+      "Calibration Diff/ECE (by sex/race/native-country)",
+      "Intersectional disparities (sex\u00d7race)"
+    ],
+    "research_questions": [
+      {
+        "id": "RQ1",
+        "question": "Can we reduce sex Equalized Odds disparity while retaining strong discrimination?",
+        "success_criterion": "Sex EO diff \u2264 0.10 with AUC \u2265 0.84 on test."
+      },
+      {
+        "id": "RQ2",
+        "question": "Does pre-, in-, or post-processing yield the best fairness-accuracy trade-off?",
+        "success_criterion": "Best-balanced score among methods with no >3% absolute accuracy drop from baseline for DP/EO \u2264 0.12."
+      },
+      {
+        "id": "RQ3",
+        "question": "Are models calibrated similarly across sex/race groups?",
+        "success_criterion": "Group-wise ECE differences \u2264 0.05 and near-diagonal reliability."
+      }
+    ],
+    "key_findings": {
+      "best_accuracy_model": {
+        "name": "Adversarial (Race)",
+        "accuracy": 0.8337789661319073,
+        "fairness_disparity": 0.2695445319267218
+      },
+      "best_fairness_model": {
+        "name": "Fairlearn EG (Both)",
+        "accuracy": 0.794229055258467,
+        "fairness_disparity": 0.22728154210138463
+      },
+      "recommended_model": {
+        "name": "Adversarial (Race)",
+        "balanced_score": 0.7924495669084557,
+        "rationale": "Best trade-off between performance and fairness"
+      }
+    },
+    "method_metadata": {
+      "seed": 42,
+      "reweighting": {
+        "sex": {
+          "mean": 1.0,
+          "std": 0.25839371676104206,
+          "min": 0.7810796713434465,
+          "max": 2.1928379735022547,
+          "original_size": 28720,
+          "cleaned_size": 28720,
+          "dropped_rows": 0,
+          "used": "aif360_reweighing"
+        },
+        "race": {
+          "mean": 1.0,
+          "std": 0.10083768236488494,
+          "min": 0.8998198164113672,
+          "max": 1.6448757173082484,
+          "original_size": 28720,
+          "cleaned_size": 28720,
+          "dropped_rows": 0,
+          "used": "aif360_reweighing"
+        }
+      },
+      "shap_stability": {
+        "Baseline (Tuned)": {
+          "top_k": 10,
+          "mean_jaccard": 1.0
+        }
+      },
+      "ccf": {
+        "sex_thresholds": {
+          "Female": 0.3,
+          "Male": 0.5499999999999999
+        },
+        "race_thresholds": {
+          "Amer-Indian-Eskimo": 0.35,
+          "Asian-Pac-Islander": 0.5499999999999999,
+          "Black": 0.44999999999999996,
+          "Other": 0.35,
+          "White": 0.5499999999999999
+        },
+        "constraints": {
+          "dp_max": 0.12,
+          "eo_max": 0.12,
+          "ece_max": 0.07
+        }
+      }
+    },
+    "bias_analysis": {
+      "sex_bias_detected": true,
+      "race_bias_detected": true,
+      "intersectional_bias_severity": "Medium"
+    },
+    "ethics_and_risk": {
+      "privileged_groups": {
+        "sex": "Male",
+        "race": "White"
+      },
+      "justification": "Matches common practice in Adult dataset analyses and aligns with historical advantage patterns; used only for auditing/constraints.",
+      "harms_tradeoffs": [
+        "Mitigations may reduce accuracy on privileged groups to improve parity.",
+        "Intersectional disparities can remain even when marginal DP/EO improves.",
+        "Sensitive attributes are excluded from X to avoid disparate treatment; proxies may persist."
+      ],
+      "dataset_biases": "Adult dataset reflects historical income inequities; labels encode structural bias; results are context-limited."
+    },
+    "reproducibility": {
+      "seeds": {
+        "python_numpy_torch": 42
+      },
+      "environment": {
+        "python": "3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]",
+        "packages": [
+          "numpy>=1.24.0",
+          "pandas>=2.2.0",
+          "scikit-learn~=1.4",
+          "matplotlib>=3.8.0",
+          "seaborn>=0.13.0",
+          "shap>=0.45.0",
+          "lime>=0.2.0.1",
+          "fairlearn>=0.12.0",
+          "aif360>=0.6.1",
+          "torch~=2.2",
+          "optuna>=3.2.0,<5",
+          "aif360[AdversarialDebiasing]",
+          "aif360[inFairness]"
+        ]
+      },
+      "how_to_run": "Activate venv, install requirements, then run: python main.py",
+      "artifacts": {
+        "figures": "results/plots/",
+        "tables": "results/reports/*.csv and detailed_analysis_report.json"
+      }
+    },
+    "scope_and_extras": {
+      "additional_models": "Primary focus is Logistic Regression. RF/XGB not included to keep scope tight; can be added as future work.",
+      "external_validation": "Not performed; Adult is the single benchmark used.",
+      "ui": "Not included; command-line pipeline with saved artifacts.",
+      "error_analysis": "Local explanations via LIME for three representative cases; can expand to more cases if required."
+    },
+    "next_steps": [
+      "Evaluate RF/XGB as alternative families with the same fairness protocol.",
+      "Extend LIME cases and add group-conditional SHAP summaries.",
+      "Consider external dataset for validation if within scope/time."
+    ]
+  }
+}

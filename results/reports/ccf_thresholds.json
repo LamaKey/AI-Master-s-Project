@@ -1,0 +1,18 @@
+{
+  "sex_thresholds": {
+    "Female": 0.3,
+    "Male": 0.5499999999999999
+  },
+  "race_thresholds": {
+    "Amer-Indian-Eskimo": 0.35,
+    "Asian-Pac-Islander": 0.5499999999999999,
+    "Black": 0.44999999999999996,
+    "Other": 0.35,
+    "White": 0.5499999999999999
+  },
+  "constraints": {
+    "dp_max": 0.12,
+    "eo_max": 0.12,
+    "ece_max": 0.07
+  }
+}
